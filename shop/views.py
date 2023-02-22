@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
+from math import ceil
 
 
 def index(request):
-    return render(request, 'shop/index.html')
+    products = Product.objects.all()
+    n = len(products)
+    nslides = n//4 + ceil(n/4 - n//4)
+    params = {'slides': nslides, 'range': range(1, nslides), 'product': products, }
+    return render(request, 'shop/index.html', params)
 
 
 def about(request):
@@ -27,4 +33,4 @@ def productView(request):
 
 
 def checkOut(request):
- return HttpResponse('checkout shop')
+    return HttpResponse('checkout shop')

@@ -3,6 +3,7 @@
 {% block title %} Title of index {% endblock %}
 
 {% block style %}
+@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@500&display=swap');
 
  #nav-bar
   {
@@ -19,166 +20,58 @@
   }
   .card img
   {
-    margin: 5px 60px;
-    width: 200px;
-    height: 200px;
+    width: 150px;
   }
+
   {% endblock %}
 
 
 {% block body %}
 {% load static %}
+<h2 class="text-center" style="font-family: 'Labrada', serif;">temporary</h2>
     <div id="carouselExampleCaptions" class="carousel slide  mt-4" data-bs-interval="false">
 
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card-group">
-            <div class="card">
-              <img src="{% static 'shop/chips.jpg'%}" class="card-img-top">
+
+        <div class="carousel-item container-fluid active">
+            <div >
+<div class="row">
+            {% for i in product|slice:"0:" %}
+            <div class="card col-md-3">
+             <div class="text-center mx-4"> <img src="/media/{{i.image}}" class="card-img-top"></div>
               <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 14 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
+                  <div class="w-100 " style="height:50px;">
+                <h5 class="card-title">{{i.product_name}}</h5>
+                  </div>
+                 <h4 class="card-title pricing-card-title text-info text-end">₹ {{i.price}}.00</h4>
+                  <div>
+                  <button class="btn btn-primary" style="width:48%" type="button">Buy Now</button>
+                  <button class="btn btn-secondary " style="width:48%" type="button">Add to Cart</button>
+
+                  </div>
+<!--                <div class="d-grid gap-2 d-md-flex justify-content-md-end">-->
+<!--                  <button class="btn btn-primary me-md-2 px-3" type="button">Buy Now</button>-->
+<!--                  <button class="btn btn-secondary px-3" type="button">Add to Cart</button>-->
+<!--                </div>-->
               </div>
             </div>
-            <div class="card">
-              <img src="{% static 'shop/chips.jpg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips.jpg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips.jpg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
+            {% if forloop.counter|divisibleby:4 and forloop.counter > 0 %}
+
             </div>
 
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-group">
-            <div class="card">
-              <img src="{% static 'shop/chips2.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
             </div>
-            <div class="card">
-              <img src="{% static 'shop/chips2.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-3" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips2.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips2.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
             </div>
 
+          <div class="carousel-item container-fluid">
+               <div >
+                   <div class="row">
+            {% endif %}
+            {% endfor %}
+              </div>
+               </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-group">
-            <div class="card">
-              <img src="{% static 'shop/chips3.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips3.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips3.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary me-md-2 px-4" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <img src="{% static 'shop/chips3.jpeg'%}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">lays chips</h5>
-                <p class="card-text">Lay's Classic Salted Potato Chips 104 g</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button class="btn btn-primary me-md-2 px-4 me-2" type="button">Buy Now</button>
-                  <button class="btn btn-secondary px-4" type="button">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -191,4 +84,5 @@
 <!-- carousel end -->
 
 {% endblock %}
+
 
