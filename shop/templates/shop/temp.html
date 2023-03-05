@@ -36,7 +36,7 @@
 {% load static %}
 
 <div class="set_image">
-    <img src="{% static 'shop/poster.jpg' %}" style="width:98%; margin:20px 10px;">
+    <a href="#"> <img src="{% static 'shop/poster.jpg' %}" style="width:98%; margin:20px 10px;"></a>
 </div>
 {% for product, range, nslides in allprods %}
 <h2 class="text-center" style="font-family: 'Labrada', serif;">{{product.0.category}}</h2>
